@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kadeconsole"
+version = "0.1.0"
+description = "Bloomberg-terminal-style equity research console powered by yfinance and Jev AI"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "kadeConsole Contributors" }]
+keywords = ["finance", "terminal", "equities", "bloomberg", "yfinance", "ai"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+
+dependencies = [
+    "yfinance>=0.2.40",
+    "rich>=13.7.0",
+    "prompt_toolkit>=3.0.43",
+    "plotext>=5.2.8",
+    "PyYAML>=6.0.1",
+    "pandas>=2.1.0",
+    "numpy>=1.26.0",
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-mock>=3.12.0",
+]
+jev = ["typesafe-sdk>=0.1.0"]
+alpaca = ["alpaca-trade-api>=3.0.0"]
+alphavantage = ["alpha-vantage>=2.3.1"]
+
+[project.scripts]
+kadeconsole = "kadeconsole.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/kade-console/kade-console"
+Repository = "https://github.com/kade-console/kade-console"
+Issues = "https://github.com/kade-console/kade-console/issues"
+Changelog = "https://github.com/kade-console/kade-console/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["kadeconsole*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
