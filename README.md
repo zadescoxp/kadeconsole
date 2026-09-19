@@ -2,6 +2,8 @@
 
 > A Bloomberg-terminal-style equity research console — free, open-source, and AI-powered.
 
+![kadeConsole Demo](assets/demo.gif)
+
 ```
   ██╗  ██╗ █████╗ ██████╗ ███████╗
   ██║ ██╔╝██╔══██╗██╔══██╗██╔════╝

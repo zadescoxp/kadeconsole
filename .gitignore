@@ -39,3 +39,8 @@ htmlcov/
 
 # Logs
 *.log
+
+# Media / Recordings
+*.mp4
+*.mov
+
