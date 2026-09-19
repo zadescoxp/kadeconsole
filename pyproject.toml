@@ -48,10 +48,10 @@ alphavantage = ["alpha-vantage>=2.3.1"]
 kadeconsole = "kadeconsole.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/kade-console/kade-console"
-Repository = "https://github.com/kade-console/kade-console"
-Issues = "https://github.com/kade-console/kade-console/issues"
-Changelog = "https://github.com/kade-console/kade-console/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/zadescoxp/kadeconsole"
+Repository = "https://github.com/zadescoxp/kadeconsole"
+Issues = "https://github.com/zadescoxp/kadeconsole/issues"
+Changelog = "https://github.com/zadescoxp/kadeconsole/blob/main/CHANGELOG.md"
 
 [tool.setuptools.packages.find]
 where = ["."]
