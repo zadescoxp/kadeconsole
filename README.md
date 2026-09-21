@@ -1,6 +1,6 @@
 # kadeConsole
 
-> A Bloomberg-terminal-style equity research console — free, open-source, and AI-powered.
+> An equity research console (like a Bloomberg terminal) — free, open-source, and AI-powered.
 
 ![kadeConsole Demo](assets/demo.gif)
 
@@ -13,7 +13,7 @@
   ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝  CONSOLE  v0.1.0
 ```
 
-Bloomberg terminals cost ~$24k/year. kadeConsole is free. It gives you the muscle-memory command grammar of a real terminal, dense richly-formatted output, and **Jev** (TypeSafe AI) embedded in every screen — delivering the one non-obvious insight that raw numbers alone can't.
+kadeConsole is free and gives you the muscle-memory command grammar of a real terminal, dense richly-formatted output, and LLMs (such as Jev, OpenAI, or Anthropic) embedded in every screen — delivering the one non-obvious insight that raw numbers alone can't.
 
 ---
 
@@ -41,8 +41,8 @@ kadeConsole > FA Q                 # quarterly fundamentals
 kadeConsole > GP                   # 1Y price chart
 kadeConsole > GP 6M                # 6-month chart
 kadeConsole > HP                   # historical OHLCV
-kadeConsole > VERDICT              # Jev buy/sell/hold distribution
-kadeConsole > RATE                 # Jev multi-axis fundamental rating
+kadeConsole > VERDICT              # AI buy/sell/hold distribution
+kadeConsole > RATE                 # AI multi-axis fundamental rating
 kadeConsole > HELP                 # full command reference
 kadeConsole > EXIT                 # quit
 ```
@@ -64,8 +64,8 @@ kadeConsole > INFY BO EQUITY           # Infosys on BSE
 | `FA` / `FA Q` | Full fundamentals (annual / quarterly) |
 | `GP [timeframe]` | In-terminal price chart (`1D 5D 1M 3M 6M 1Y 2Y 5Y`) |
 | `HP` | Historical OHLCV table |
-| `VERDICT` | Jev buy/sell/hold probability distribution |
-| `RATE` | Jev multi-axis rating (valuation/growth/quality/momentum) |
+| `VERDICT` | AI buy/sell/hold probability distribution |
+| `RATE` | AI multi-axis rating (valuation/growth/quality/momentum) |
 | `HELP` / `?` | Command reference |
 | `EXIT` / `QUIT` | Exit the REPL |
 
@@ -81,7 +81,10 @@ On first run, kadeConsole creates `~/.kadeconsole/config.yaml`:
 provider_priority:
   - yfinance
 
+llm_provider: "jev"         # options: jev, openai, anthropic
 typesafe_api_key: ""        # Get yours at https://typesafe.ai
+openai_api_key: ""
+anthropic_api_key: ""
 alpaca_api_key: ""
 alphavantage_api_key: ""
 
@@ -89,7 +92,7 @@ default_timeframe: 1Y
 theme: default
 ```
 
-Set `typesafe_api_key` to enable **Jev** AI analysis (VERDICT, RATE, anomaly flags). The terminal is fully functional without it — Jev sections show a graceful "unavailable" notice.
+Set your preferred API key (e.g., `typesafe_api_key`, `openai_api_key`) to enable AI analysis (VERDICT, RATE, anomaly flags). The terminal is fully functional without it — AI sections show a graceful "unavailable" notice.
 
 ---
 
@@ -107,7 +110,7 @@ The `providers/base.py` `DataProvider` interface is public. To add a new source:
 
 - Python 3.10+
 - A modern terminal: **iTerm2** (macOS), **Windows Terminal** (Windows), **GNOME Terminal** / **Kitty** (Linux)
-- *Optional:* TypeSafe AI key for Jev features
+- *Optional:* API key for LLM features (Jev, OpenAI, etc.)
 
 ---
 
